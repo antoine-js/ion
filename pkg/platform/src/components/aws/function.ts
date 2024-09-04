@@ -1495,18 +1495,11 @@ export class Function
    * The underlying [resources](/docs/components/#nodes) this component creates.
    */
   public get nodes() {
-    const self = this;
     return {
       /**
        * The IAM Role the function will use.
        */
-      get role() {
-        if (!self.role)
-          throw new Error(
-            `"nodes.role" is not available when a pre-existing role is used.`,
-          );
-        return self.role;
-      },
+      role: this.role,
       /**
        * The AWS Lambda function.
        */
